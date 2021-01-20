@@ -1,14 +1,25 @@
 public class Flight {
-    String FlightNumber;
-    String airline;
-    int capacity;
-    int bookedSeats;
-    void getFlightDetails(){ ;
-    }
-    void checkAvailablity(){
+    private int flight;
+    private String airLine;
+    private int totalCapacity;
+    private int numOfSeatsBooked;
 
+    Flight(int flight,String airLine,int totalCapacity, int numOfSeatsBooked) {
+        this.flight = flight;
+        this.airLine = airLine;
+        this.totalCapacity = totalCapacity;
+        this.numOfSeatsBooked = numOfSeatsBooked;
     }
-    void incrementBookingCounter(){
-
+    public String getFlightDetails() {
+        return flight+ "@" +airLine+"@"+numOfSeatsBooked;
+    }
+    public boolean checkAvailability() {
+        if(totalCapacity >= numOfSeatsBooked) {
+            return  true;
+        } else
+            return false;
+    }
+    public void updateBookedSeats(int numOfSeatsNeeded) {
+        numOfSeatsBooked = numOfSeatsBooked + numOfSeatsNeeded;
     }
 }
